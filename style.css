@@ -115,12 +115,14 @@
             grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 60px;
-            padding: 80px 8%;
+            padding: 4.5rem 5%;
             min-height: 30em;
         }
 
         .hero-content {
             z-index: 1;
+            width: 28rem;
+        
         }
 
         .hello-badge {
@@ -144,12 +146,12 @@
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 40px;
             line-height: 1.2;
             margin-bottom: 25px;
         }
 
-        .hero h1 .highlight {
+        h1 .highlight {
             color: #00ff9d;
         }
 
@@ -209,6 +211,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
         }
 
         .image-container {
@@ -263,7 +266,7 @@
 
         /* Services Section */
         .services {
-            padding: 8px 6%;
+            padding: 4rem 6%;
             background: rgba(10, 20, 35, 0.5);
         }
 
@@ -366,6 +369,77 @@
             z-index: 1;
         }
 
+        .hireme{
+            padding: 3rem 3rem;
+        }
+        
+        .topic{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0 2rem 0;
+        }
+        
+        .topic .tittle{
+            width: 18rem;
+        } 
+        
+        .topic .description{
+            width: 25rem;
+            font-size: 14px;
+            color: #b0b8c8;
+        }
+        
+        .hireme .stat-item{
+            width: 18rem;
+            height: 6rem;
+            background: rgba(0, 255, 157, 0.1);
+            border: 2px solid #00ff9d;
+            border-radius: 1.6rem;
+            font-size: 20px;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+        
+        .hireme .stat-item:hover{
+            transform: translateX(10px);
+            border-color: #00ff9d;
+            box-shadow: 0 20px 40px rgba(0, 255, 157, 0.2);
+        }
+        
+        .stat-item .stat-number{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .hireme .cta-hire{
+            margin: 1em 0;
+            padding: 0.9rem 0.5rem;
+            outline: none;
+            border: none;
+            border-radius: 1.5rem;
+            background-size: 100%;
+            background: linear-gradient(135deg, #00ff9d 0%, #00d4ff 100%);
+            animation: moving-bg 0.5s ease forwards;
+        }
+        
+        @keyframes moving-bg{
+            from{
+                
+                background-position: 20%;
+            }
+            
+            to{
+                background-position: 70%;
+            }
+        }
+
         /* Scroll to Top Button */
         .scroll-top {
             position: fixed;
@@ -394,6 +468,12 @@
         .scroll-top.show {
             display: flex;
         }
+        
+        
+        
+        
+        
+        
 
         /* Responsive Design */
         @media (max-width: 968px) {
@@ -517,6 +597,29 @@
             .hero-avatar::before {
                 font-size: 60px;
             }
+            
+            .hero-image {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                right: 0;
+            }
+            
+            .hero-content {
+                z-index: 1;
+                width: auto;
+            }
+            
+            .topic{
+                text-align: center;
+                flex-direction: column;
+            }
+            
+            .topic .description{
+                width: 20rem;
+                padding: 0.5rem 0;
+            }
         }
 
         /* Animations */
@@ -560,8 +663,6 @@
             left: 5%;
             animation: float 10s ease-in-out infinite reverse;
         }
-        
-        
         
         
         
