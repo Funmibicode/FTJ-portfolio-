@@ -12,10 +12,7 @@
             overflow-x: hidden;
         }
         
-        /*body.fixed{
-            position: ;
-        }  */
-        
+
         /* Navigation Bar */
         nav {
             display: flex;
@@ -103,7 +100,7 @@
         }
 
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+            transform: rotate(45deg) translate(5px, 5px);
         }
 
         .hamburger.active span:nth-child(2) {
@@ -111,7 +108,7 @@
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+            transform: rotate(-45deg) translate(8px, -8px);
         }
 
         /* Hero Section */
@@ -138,6 +135,7 @@
             color: #00ff9d;
             font-size: 14px;
             margin-bottom: 20px;
+            position: relative;
             animation: pulse 2s infinite;
         }
 
@@ -148,6 +146,23 @@
             50% {
                 box-shadow: 0 0 0 10px rgba(0, 255, 157, 0);
             }
+        }
+        
+        .hello-badge::before{
+            content: "";
+            width: 0;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0;
+            border-radius: 25px;
+            z-index: -1;
+            transition: 0.3s ease-out;
+        }
+        
+        .hello-badge:hover::before {
+            background: #23B6A3;
+            width: 100%;
         }
 
         .hero h1 {
@@ -680,7 +695,8 @@
 
 .frameworks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+    
     gap: 30px;
 }
 
@@ -693,6 +709,7 @@
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
+    
 }
 
 .framework-card::before {
@@ -1105,6 +1122,8 @@
 
         /* Responsive Design */
         @media (max-width: 968px) {
+        
+            
             nav {
                 padding: 20px 5%;
             }
@@ -1112,10 +1131,11 @@
             .nav-links {
                 position: fixed;
                 left: -100%;
-                top: 80px;
+                top: 3rem;
                 flex-direction: column;
                 background: rgba(10, 14, 26, 0.98);
-                width: 100%;
+                height: 100vh;
+                width: 70%;
                 text-align: center;
                 transition: left 0.3s ease;
                 padding: 40px 0;

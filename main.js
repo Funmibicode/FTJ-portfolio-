@@ -37,7 +37,7 @@ console.log('Hello World!');
         });
 
         // Smooth Scrolling for Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+       /* document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
@@ -48,7 +48,7 @@ console.log('Hello World!');
                     });
                 }
             });
-        });
+        });*/
 
         // Intersection Observer for Fade-in Animation
         const observerOptions = {
@@ -153,6 +153,7 @@ document.querySelectorAll('.framework-card').forEach(card => {
     });
 });
 
+/*
 // Add click animation to tags
 document.querySelectorAll('.tag').forEach(tag => {
     tag.addEventListener('click', function() {
@@ -172,7 +173,7 @@ window.addEventListener('scroll', () => {
         const speed = (index + 1) * 0.3;
         circle.style.transform = `translate(${scrolled * speed * 0.1}px, ${scrolled * speed}px)`;
     });
-});
+});*/
 
 // Add sparkle effect to hobby icon
 const hobbyIcon = document.querySelector('.hobby-icon');
@@ -229,19 +230,6 @@ function createSparkle() {
     animation.onfinish = () => sparkle.remove();
 }
 
-// Smooth scroll for any anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
 
 // Add typing effect to section subtitle (optional)
 const subtitle = document.querySelector('.section-subtitle');
