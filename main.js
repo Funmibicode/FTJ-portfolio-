@@ -6,6 +6,8 @@ console.log('Hello World!');
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
+            
+            document.body.classList.toggle("fixed");
         });
 
         // Close menu when clicking on a link

@@ -11,7 +11,11 @@
             color: white;
             overflow-x: hidden;
         }
-
+        
+        /*body.fixed{
+            position: ;
+        }  */
+        
         /* Navigation Bar */
         nav {
             display: flex;
@@ -258,12 +262,12 @@
             z-index: 1;
         }
 
-        .hero-avatar::before {
+        /* .hero-avatar::before {
             content: '</>';
             font-size: 120px;
             color: rgba(0, 255, 157, 0.3);
             font-weight: bold;
-        }
+        }  */
 
         /* Services Section */
         .services {
