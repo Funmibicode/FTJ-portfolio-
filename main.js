@@ -688,21 +688,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Animate projects on scroll
-const observeOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const projectObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            projectObserver.unobserve(entry.target);
-        }
-    });
-}, observeOptions);
 
 // Observe all project cards
 document.querySelectorAll('.project-card').forEach((card, index) => {
@@ -787,16 +772,7 @@ styles.textContent = `
 `;
 document.head.appendChild(style);
 
-// Parallax effect for background circles
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const circles = document.querySelectorAll('.bg-decoration');
-    
-    circles.forEach((circle, index) => {
-        const speed = (index + 1) * 0.3;
-        circle.style.transform = `translate(${scrolled * speed * 0.15}px, ${scrolled * speed}px)`;
-    });
-});
+
 
 // Add click tracking for project links (optional analytics)
 document.querySelectorAll('.project-btn').forEach(btn => {
