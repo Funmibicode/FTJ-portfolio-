@@ -409,3 +409,87 @@ document.head.appendChild(styles);
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Portfolio initialized successfully! ✨');
 });
+
+// ========================================
+// CURSOR GLOW
+// ========================================
+const cursorGlow = document.getElementById('cursorGlow');
+document.addEventListener('mousemove', (e) => {
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top  = e.clientY + 'px';
+});
+
+// ========================================
+// NAVBAR SCROLL EFFECT & ACTIVE LINKS
+// ========================================
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.pageYOffset > 50);
+    // highlight active nav link
+    const sections = document.querySelectorAll('section[id]');
+    let current = '';
+    sections.forEach(sec => {
+        if (window.pageYOffset >= sec.offsetTop - 100) current = sec.id;
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+});
+
+// ========================================
+// TYPEWRITER EFFECT
+// ========================================
+const words = ['Funmibi', 'Creative', 'Innovative'];
+let wIdx = 0, cIdx = 0, deleting = false;
+const tw = document.getElementById('typewriter');
+function typeLoop() {
+    if (!tw) return;
+    const word = words[wIdx];
+    tw.textContent = deleting ? word.substring(0, cIdx--) : word.substring(0, cIdx++);
+    if (!deleting && cIdx === word.length + 1) { deleting = true; setTimeout(typeLoop, 1800); return; }
+    if (deleting && cIdx === 0) { deleting = false; wIdx = (wIdx + 1) % words.length; }
+    setTimeout(typeLoop, deleting ? 60 : 110);
+}
+setTimeout(typeLoop, 500);
+
+// ========================================
+// ANIMATED COUNTERS
+// ========================================
+function animateCounters() {
+    document.querySelectorAll('.counter').forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        let count = 0;
+        const step = target / 60;
+        const timer = setInterval(() => {
+            count = Math.min(count + step, target);
+            el.textContent = Math.floor(count) + suffix;
+            if (count >= target) clearInterval(timer);
+        }, 25);
+    });
+}
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCounters(); counterObserver.disconnect(); } });
+}, { threshold: 0.4 });
+const hireSection = document.querySelector('.hireme');
+if (hireSection) counterObserver.observe(hireSection);
+
+// ========================================
+// CONTACT FORM HANDLER
+// ========================================
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('.submit-btn');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        setTimeout(() => {
+            document.getElementById('successMessage').classList.add('show');
+            contactForm.reset();
+            btn.innerHTML = '<span class="btn-text">Send Message</span><span class="btn-icon">🚀</span>';
+            btn.disabled = false;
+            setTimeout(() => document.getElementById('successMessage').classList.remove('show'), 5000);
+        }, 1200);
+    });
+}
