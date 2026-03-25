@@ -407,7 +407,7 @@ document.head.appendChild(styles);
 // INITIALIZATION
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Portfolio initialized successfully! ✨');
+
 });
 
 // ========================================
@@ -479,17 +479,41 @@ if (hireSection) counterObserver.observe(hireSection);
 // ========================================
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
         const btn = contactForm.querySelector('.submit-btn');
-        btn.textContent = 'Sending...';
+        btn.innerHTML = '<span class="btn-text">Sending...</span>';
         btn.disabled = true;
-        setTimeout(() => {
+
+        // Get form values
+        const name    = document.getElementById('name').value;
+        const email   = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // Build WhatsApp message
+        const text = `📩 New Portfolio Message!\n\n👤 Name: ${name}\n📧 Email: ${email}\n📝 Subject: ${subject}\n💬 Message: ${message}`;
+
+        // CallMeBot API — replace with your number and API key
+        const phone  = '2349069785714'; // your number without +
+        const funmibiNet = 'YOUR_API_KEY';  // key from CallMeBot
+        const url    = `https://api.callmebot.com/whatsapp.php?phone=${phone}&text=${encodeURIComponent(text)}&apikey=${funmibiNet}`;
+
+        try {
+            await fetch(url, { method: 'GET', mode: 'no-cors' });
+            // Show success
             document.getElementById('successMessage').classList.add('show');
             contactForm.reset();
+        } catch (err) {
+            document.getElementById('errorMessage').classList.add('show');
+        } finally {
             btn.innerHTML = '<span class="btn-text">Send Message</span><span class="btn-icon">🚀</span>';
             btn.disabled = false;
-            setTimeout(() => document.getElementById('successMessage').classList.remove('show'), 5000);
-        }, 1200);
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.remove('show');
+                document.getElementById('errorMessage').classList.remove('show');
+            }, 5000);
+        }
     });
 }
