@@ -57,29 +57,6 @@ document.querySelectorAll('.fade-in, .core-skills, .frameworks-section, .hobby-s
     fadeObserver.observe(el);
 });
 
-// Skill progress bar animation
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const progressBar = entry.target;
-            const progress = progressBar.getAttribute('data-progress');
-            
-            setTimeout(() => {
-                progressBar.style.width = progress + '%';
-            }, 200);
-            
-            skillObserver.unobserve(progressBar);
-        }
-    });
-}, {
-    threshold: 0.3,
-    rootMargin: '0px 0px -50px 0px'
-});
-
-document.querySelectorAll('.skill-progress').forEach(bar => {
-    skillObserver.observe(bar);
-});
-
 // ========================================
 // PARALLAX EFFECTS (OPTIMIZED)
 // ========================================
