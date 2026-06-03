@@ -1,464 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funmibi — Frontend Web Developer</title>
-    <meta name="description" content="Funmibi — Frontend Web Developer based in Lagos. I build fast, responsive websites for startups and small businesses.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="image/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Abiodun Oluwafunmibi — Frontend Developer helping small businesses grow online. Clean code, sharp design, and real results." />
+  <meta property="og:title" content="Funmibitech — Abiodun Oluwafunmibi" />
+  <meta property="og:description" content="Frontend Developer · Helping Small Businesses Grow Online" />
+  <meta property="og:image" content="https://i.ibb.co/svtBC841/image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Funmibitech — Abiodun Oluwafunmibi" />
+  <meta name="twitter:description" content="Frontend Developer · Helping Small Businesses Grow Online" />
+  <meta name="twitter:image" content="https://i.ibb.co/svtBC841/image.jpg" />
+  <title>Funmibitech — Abiodun Oluwafunmibi</title>
+  <!-- Preload profile image -->
+  <link rel="preload" as="image" href="https://i.ibb.co/svtBC841/image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-    <div class="cursor-glow" id="cursorGlow"></div>
-    <div class="bg-decoration circle-1"></div>
-    <div class="bg-decoration circle-2"></div>
-    <div class="bg-grid"></div>
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">Funmibi<span>tech</span></a>
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="logo">
-            <a href="#home"><img src="image/favicon.png" alt="Funmibi logo" /></a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Me</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page blur overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="#hero" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#process" class="mobile-link">Process</a>
+    <a href="#blog" class="mobile-link">Blog</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#contact" class="mobile-link nav-mobile-cta">Hire Me</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Available for freelance projects
+      </div>
+
+      <h1 class="hero-name">
+        Abiodun<br />
+        <span class="hero-name-outline">Oluwafunmibi</span>
+      </h1>
+
+      <p class="hero-brand">Frontend Developer · Tech Content Creator</p>
+
+      <p class="hero-tagline">
+        I help <strong>small business owners</strong> get online with websites that look great and actually grow their business — plus I share <strong>tech tips</strong> and build with <strong>security in mind</strong>, always.
+      </p>
+
+      <p class="hero-typewriter">
+        <span id="typewriter-text"></span><span class="hero-typewriter-cursor"></span>
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-grip"></i> View Projects
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fa-solid fa-envelope"></i> Contact Me
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <span class="hero-socials-label">Find me on</span>
+        <a href="https://github.com/Funmibicode" target="_blank" rel="noopener" class="hero-social-link" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/abiodun-oluwafunmibi-b5264a37b" target="_blank" rel="noopener" class="hero-social-link" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://x.com/funmibitech04" target="_blank" rel="noopener" class="hero-social-link" aria-label="X / Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://wa.link/ht4u49" target="_blank" rel="noopener" class="hero-social-link" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Image -->
+        <div class="about-image-wrap" data-aos="fade-right">
+          <div class="about-image-frame">
+            <!-- Replace src with your actual photo path -->
+            <img
+              src="https://i.ibb.co/svtBC841/image.jpg"
+              alt="Abiodun Oluwafunmibi — Funmibitech"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="about-stat-badge">
+            <strong>2+</strong>
+            <span>Years<br>Experience</span>
+          </div>
         </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#hire">Why Me</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects-section">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
+
+        <!-- Text -->
+        <div class="about-text" data-aos="fade-left" data-aos-delay="100">
+          <p class="section-label">About Me</p>
+          <h2 class="section-title">Building websites that <span>grow businesses</span></h2>
+
+          <p class="about-bio">
+            I'm <strong>Abiodun Oluwafunmibi</strong>, a self-taught frontend developer based in Lagos, Nigeria, operating under the brand <strong>Funmibitech</strong>. I help small business owners get a proper online presence — fast, clean, and professional websites that make their business look credible and attract customers.
+          </p>
+          <p class="about-bio">
+            Beyond client work, I create <strong>tech content</strong> — tips, tutorials, and insights for developers and tech curious people across LinkedIn, TikTok, and Instagram. I also build every website with <strong>security best practices</strong> baked in, because a good website should be a safe one too.
+          </p>
+
+          <div class="about-highlights">
+            <div class="about-highlight-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Based in Lagos, Nigeria — available for remote projects worldwide</span>
+            </div>
+            <div class="about-highlight-item">
+              <i class="fa-solid fa-store"></i>
+              <span>Specialising in websites for small businesses, startups & personal brands</span>
+            </div>
+            <div class="about-highlight-item">
+              <i class="fa-solid fa-bullhorn"></i>
+              <span>Tech content creator — sharing tips across LinkedIn, TikTok & Instagram</span>
+            </div>
+            <div class="about-highlight-item">
+              <i class="fa-solid fa-lock"></i>
+              <span>Every site I build follows security best practices — no shortcuts</span>
+            </div>
+            <div class="about-highlight-item">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+              <span>SEO-optimised by default — built to rank, not just look good</span>
+            </div>
+          </div>
+
+          <p class="skills-heading">Tech Stack</p>
+          <div class="skills-grid">
+            <span class="skill-pill"><i class="fa-brands fa-html5"></i> HTML5</span>
+            <span class="skill-pill"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+            <span class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span class="skill-pill"><i class="fa-brands fa-react"></i> React</span>
+            <span class="skill-pill"><i class="fa-solid fa-wind"></i> Tailwind CSS</span>
+            <span class="skill-pill"><i class="fa-solid fa-database"></i> Supabase</span>
+            <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</span>
+            <span class="skill-pill"><i class="fa-brands fa-figma"></i> Figma</span>
+            <span class="skill-pill"><i class="fa-solid fa-lock"></i> Web Crypto API</span>
+            <span class="skill-pill"><i class="fa-solid fa-terminal"></i> Vite</span>
+          </div>
         </div>
-    </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="hero-content fade-in">
-            <div class="hello-badge">
-                <span class="badge-dot"></span> Hello            </div>
-            <h1>I'm <span class="highlight" id="typewriter"></span><br>
-                <span class="subtitle-line">Frontend Developer</span>
-            </h1>
-            <p>Dive into my portfolio, a carefully curated collection of projects that demonstrate my prowess in crafting tailored solutions for diverse industries.</p>
-            <div class="hero-cta">
-                <a href="#projects-section" class="btn-primary">
-                    <span>See My Work</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#contact" class="btn-outline">
-                    <span>Hire Me</span>
-                </a>
-            </div>
-            <div class="social-links">
-                <a href="https://wa.link/ht4u49" class="social-icon" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://github.com/Funmibicode" class="social-icon" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/abiodun-oluwafunmibi-b5264a37b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-icon" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://x.com/patricktech04" class="social-icon" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section id="projects">
+    <div class="container">
+      <div class="projects-header">
+        <div data-aos="fade-up">
+          <p class="section-label">My Work</p>
+          <h2 class="section-title">Featured <span>Projects</span></h2>
+          <p class="section-desc">A curated showcase of real projects — built with purpose, shipped with pride.</p>
         </div>
-        <div class="hero-image fade-in">
-            <div class="image-container">
-                <div class="glow-ring ring-1"></div>
-                <div class="glow-ring ring-2"></div>
-                <div class="hero-avatar">
-                    <img src="image/profile.jpg" alt="Funmibi - Frontend Developer" />
-                </div>
+        <a href="/projects.html" class="btn btn-outline btn-sm" data-aos="fade-up" data-aos-delay="100">
+          View All Projects <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
 
+      <div class="projects-grid">
+
+        <!-- Prismly -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-card-thumb">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Landing Page</span>
+            <h3 class="project-title">Prismly</h3>
+            <p class="project-desc">A sleek, conversion-optimised landing page built with smooth scroll animations, bold typography, and a modern layout designed to drive engagement and captures leads.</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>AOS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://prismly.netlify.app" target="_blank" rel="noopener" class="project-link live">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="https://github.com/Funmibicode" target="_blank" rel="noopener" class="project-link code">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="services-header fade-in">
-            <span class="section-label">What I Do</span>
-            <h2>My <span class="highlight">Services</span></h2>
-            <p>I specialize in delivering tailored software solutions, marketing visuals and providing customization to meet the diverse needs of businesses.</p>
+        <!-- TrueViewsFit -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card-thumb">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">E-Commerce</span>
+            <h3 class="project-title">TrueViewsFit</h3>
+            <p class="project-desc">A fully responsive shoe store with product filtering, cart system, and WhatsApp order integration. Built for a real brand with real customers and real conversions.</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>WhatsApp API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://truviewsfit.netlify.app" target="_blank" rel="noopener" class="project-link live">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="https://github.com/Funmibicode" target="_blank" rel="noopener" class="project-link code">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-icon"><i class="fas fa-code"></i></div>
-                <h3>Web Development</h3>
-                <p>Creating responsive, modern, and user-friendly websites using the latest technologies and best practices to ensure optimal performance and user experience.</p>
+
+        <!-- StealthKey -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card-thumb">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Web App · Security</span>
+            <h3 class="project-title">StealthKey</h3>
+            <p class="project-desc">A hacker-themed encrypted password manager with AES-256 encryption via Web Crypto API, Google OAuth, and Supabase backend. Security-first design, built for real use.</p>
+            <div class="project-tech">
+              <span>JavaScript</span><span>Supabase</span><span>Web Crypto API</span><span>OAuth</span>
             </div>
-            <div class="service-card fade-in">
-                <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                <h3>Graphics Design</h3>
-                <p>Designing stunning visuals, brand identities, and marketing materials that capture attention and communicate your message effectively to your target audience.</p>
+            <div class="project-links">
+              <a href="https://stealthykey.netlify.app" target="_blank" rel="noopener" class="project-link live">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="https://github.com/Funmibicode" target="_blank" rel="noopener" class="project-link code">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
             </div>
-            <div class="service-card fade-in">
-                <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
-                <h3>UI/UX Consulting</h3>
-                <p>Expert advice on user interface improvements to make your existing products more intuitive, engaging and conversion-focused.</p>
-            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Why Hire Me -->
-    <section class="hireme" id="hire">
-        <div class="hireme-inner">
-
-            <!-- Left: heading + perks -->
-            <div class="hireme-left">
-                <span class="section-label">Why Choose Me</span>
-                <h2 class="hireme-title">Why <span class="highlight">Work</span> With <span class="highlight">Me</span>?</h2>
-                <p class="hireme-desc">I build sites that actually convert — clean code, sharp design, and fast delivery. No fluff, no bloat. Just results that make your business look credible online.</p>
-
-                <ul class="perks-list">
-                    <li class="perk-item">
-                        <span class="perk-icon"><i class="fas fa-bolt"></i></span>
-                        <div>
-                            <strong>Fast Turnaround</strong>
-                            <span>Most projects delivered in 3–7 days, not weeks.</span>
-                        </div>
-                    </li>
-                    <li class="perk-item">
-                        <span class="perk-icon"><i class="fas fa-mobile-alt"></i></span>
-                        <div>
-                            <strong>Mobile-First by Default</strong>
-                            <span>Every site I build looks great on any screen size.</span>
-                        </div>
-                    </li>
-                    <li class="perk-item">
-                        <span class="perk-icon"><i class="fas fa-comments"></i></span>
-                        <div>
-                            <strong>Clear Communication</strong>
-                            <span>You're never left wondering what's happening with your project.</span>
-                        </div>
-                    </li>
-                    <li class="perk-item">
-                        <span class="perk-icon"><i class="fas fa-tag"></i></span>
-                        <div>
-                            <strong>Budget-Friendly Pricing</strong>
-                            <span>Quality work that won't break the bank for small businesses.</span>
-                        </div>
-                    </li>
-                </ul>
+        <!-- Twin'stech -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-card-thumb">
+            <i class="fa-solid fa-solar-panel"></i>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Business Website</span>
+            <h3 class="project-title">Twin'stech Solar</h3>
+            <p class="project-desc">A professional business website for a solar and electrical services company. Clean service pages, WhatsApp integration, and mobile-first design built to generate enquiries.</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>WhatsApp API</span>
             </div>
-
-            <!-- Right: stats + CTA -->
-            <div class="hireme-right">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number counter" data-target="2" data-suffix="+">0</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number counter" data-target="5" data-suffix="+">0</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number counter" data-target="100" data-suffix="%">0</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
-                    <div class="stat-card stat-card--accent">
-                        <div class="stat-number">24h</div>
-                        <div class="stat-label">Avg. Response Time</div>
-                    </div>
-                </div>
-
-                <a href="#contact" class="cta-hire">
-                    <span>Let's Build Something Together</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+            <div class="project-links">
+              <a href="#" class="project-link live">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="https://github.com/Funmibicode" target="_blank" rel="noopener" class="project-link code">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
             </div>
-
+          </div>
         </div>
-    </section>
 
-    <!-- Skills Marquee -->
-    <section class="skills-marquee-section" id="skills-section">
-        <div class="marquee-header fade-in">
-            <span class="section-label">What I Know</span>
-            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       HOW IT WORKS — PROCESS
+  ============================================================ -->
+  <section id="process">
+    <div class="container">
+
+      <div class="process-header" data-aos="fade-up">
+        <p class="section-label">How It Works</p>
+        <h2 class="section-title">From First Call to <span>Live Website</span></h2>
+        <p class="section-desc">A clear, simple process so you always know what's happening and what comes next.</p>
+      </div>
+
+      <div class="process-grid">
+
+        <!-- Step 1 -->
+        <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+          <div class="process-icon-wrap">
+            <span class="process-step-number">1</span>
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <h3 class="process-step-title">Discovery Call</h3>
+          <p class="process-step-desc">We talk about your business, goals, and what you need. No jargon — just a simple, honest conversation.</p>
         </div>
-        <div class="marquee-wrapper">
-            <div class="marquee-fade-left"></div>
-            <div class="marquee-fade-right"></div>
-            <div class="marquee-track">
-                <div class="marquee-content">
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-html5" style="color:#e34f26;"></i></div><span class="marquee-label">HTML</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-css3-alt" style="color:#1572b6;"></i></div><span class="marquee-label">CSS</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-js" style="color:#f7df1e;"></i></div><span class="marquee-label">JavaScript</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><svg viewBox="0 0 24 24" fill="#38bdf8" width="40" height="40"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624C10.337,13.382,8.976,12,6.001,12z"/></svg></div><span class="marquee-label">Tailwind CSS</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><svg viewBox="0 0 32 32" fill="#0769ad" width="40" height="40"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-3.72 22.933c-3.395-1.026-5.688-4.161-5.482-7.695.159-2.74 1.742-5.2 4.122-6.541.634-.355 1.643-.688 2.352-.773a6.888 6.888 0 013.553.539l.466.198-.354.52c-.584.854-.989 1.822-1.196 2.852l-.085.419-.42-.115c-.636-.174-1.313-.182-1.953-.023-1.844.458-3.107 2.195-2.971 4.09.159 2.179 2.12 3.817 4.306 3.663 1.651-.116 3.083-1.214 3.601-2.783.062-.188.109-.38.143-.575H14.41l.002-.011.011-.052.645-3.144h7.524l-.014.104c-.019.134-.037.268-.058.401-.494 3.085-2.306 5.699-4.943 7.228-1.338.775-2.896 1.186-4.466 1.186a8.02 8.02 0 01-1.031-.067l.2.178z"/></svg></div><span class="marquee-label">jQuery</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><svg viewBox="0 0 109 113" fill="none" width="40" height="40"><path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="#3ECF8E"/><path d="M45.317 2.071C48.177-1.53 53.974 0.443 54.043 5.041L54.485 72.292H9.831C1.64 72.292-2.928 62.832 2.166 56.418L45.317 2.071Z" fill="#3ECF8E"/></svg></div><span class="marquee-label">Supabase</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-git-alt" style="color:#f05032;"></i></div><span class="marquee-label">Git</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-figma" style="color:#a259ff;"></i></div><span class="marquee-label">Figma</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fas fa-shield-halved" style="color:#00ff9d;"></i></div><span class="marquee-label">Web Crypto API</span></div>
-                </div>
-                <!-- Duplicate for seamless loop -->
-                <div class="marquee-content" aria-hidden="true">
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-html5" style="color:#e34f26;"></i></div><span class="marquee-label">HTML</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-css3-alt" style="color:#1572b6;"></i></div><span class="marquee-label">CSS</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-js" style="color:#f7df1e;"></i></div><span class="marquee-label">JavaScript</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><svg viewBox="0 0 24 24" fill="#38bdf8" width="40" height="40"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624C10.337,13.382,8.976,12,6.001,12z"/></svg></div><span class="marquee-label">Tailwind CSS</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><svg viewBox="0 0 32 32" fill="#0769ad" width="40" height="40"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-3.72 22.933c-3.395-1.026-5.688-4.161-5.482-7.695.159-2.74 1.742-5.2 4.122-6.541.634-.355 1.643-.688 2.352-.773a6.888 6.888 0 013.553.539l.466.198-.354.52c-.584.854-.989 1.822-1.196 2.852l-.085.419-.42-.115c-.636-.174-1.313-.182-1.953-.023-1.844.458-3.107 2.195-2.971 4.09.159 2.179 2.12 3.817 4.306 3.663 1.651-.116 3.083-1.214 3.601-2.783.062-.188.109-.38.143-.575H14.41l.002-.011.011-.052.645-3.144h7.524l-.014.104c-.019.134-.037.268-.058.401-.494 3.085-2.306 5.699-4.943 7.228-1.338.775-2.896 1.186-4.466 1.186a8.02 8.02 0 01-1.031-.067l.2.178z"/></svg></div><span class="marquee-label">jQuery</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><svg viewBox="0 0 109 113" fill="none" width="40" height="40"><path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="#3ECF8E"/><path d="M45.317 2.071C48.177-1.53 53.974 0.443 54.043 5.041L54.485 72.292H9.831C1.64 72.292-2.928 62.832 2.166 56.418L45.317 2.071Z" fill="#3ECF8E"/></svg></div><span class="marquee-label">Supabase</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-git-alt" style="color:#f05032;"></i></div><span class="marquee-label">Git</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fab fa-figma" style="color:#a259ff;"></i></div><span class="marquee-label">Figma</span></div>
-                    <div class="marquee-item"><div class="marquee-icon"><i class="fas fa-shield-halved" style="color:#00ff9d;"></i></div><span class="marquee-label">Web Crypto API</span></div>
-                </div>
-            </div>
+
+        <!-- Step 2 -->
+        <div class="process-step" data-aos="fade-up" data-aos-delay="80">
+          <div class="process-icon-wrap">
+            <span class="process-step-number">2</span>
+            <i class="fa-solid fa-file-lines"></i>
+          </div>
+          <h3 class="process-step-title">Proposal & Plan</h3>
+          <p class="process-step-desc">I send a clear proposal — scope, timeline, and price. You approve it, and we get started.</p>
         </div>
-    </section>
 
-    <!-- My Passion -->
-    <section class="passion-section" id="passion">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-label">What Drives Me</span>
-                <h2 class="section-title">My <span class="highlight">Passion</span></h2>
-            </div>
-            <div class="passion-card fade-in">
-                <div class="passion-icon-wrapper">
-                    <div class="passion-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
-                    </div>
-                </div>
-                <h4>Problem Solver &amp; Innovator</h4>
-                <p>I solve real-world problems with seamless tech solutions, transforming complex challenges into elegant, user-friendly applications that make a difference.</p>
-                <div class="passion-tags">
-                    <span class="passion-tag">Innovation</span>
-                    <span class="passion-tag">Problem Solving</span>
-                    <span class="passion-tag">User Experience</span>
-                </div>
-            </div>
+        <!-- Step 3 -->
+        <div class="process-step" data-aos="fade-up" data-aos-delay="160">
+          <div class="process-icon-wrap">
+            <span class="process-step-number">3</span>
+            <i class="fa-solid fa-pen-ruler"></i>
+          </div>
+          <h3 class="process-step-title">Design & Build</h3>
+          <p class="process-step-desc">I design and develop your site with clean code, fast load times, and mobile-first layout throughout.</p>
         </div>
-    </section>
 
-        <!-- Projects -->
-    <section class="projects-section" id="projects-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">My Work</span>
-                <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
-                <p class="section-subtitle">A showcase of my recent work — transforming ideas into interactive web experiences</p>
-            </div>
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <div class="project-bg-img ecommerce-placeholder">
-                        <div class="project-status"><span class="status-badge live"><i class="fas fa-circle"></i> Live</span></div>
-                        <div class="project-bg-gradient">
-                            <div class="project-content">
-                                <div class="project-header"><h3 class="project-title">TruViewsFit Shoe Store</h3><div class="project-number">01</div></div>
-                                <p class="project-description">A fully responsive e-commerce platform with cart, product filtering, and seamless checkout.</p>
-                                <div class="project-extra hidden">
-                                    <div class="project-features">
-                                        <div class="feature"><i class="fas fa-check-circle"></i><span>WhatsApp Order Integrated System</span></div>
-                                        <div class="feature"><i class="fas fa-check-circle"></i><span>Product Filtering</span></div>
-                                        <div class="feature"><i class="fas fa-check-circle"></i><span>Responsive Design</span></div>
-                                    </div>
-                                </div>
-                                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More <i class="fas fa-chevron-down"></i></button>
-                                <div class="project-links">
-                                    <a href="https://truviewsfit.netlify.app" target="_blank" class="project-btn live-demo"><i class="fas fa-external-link-alt"></i><span>Live Demo</span></a>
-                                    <a href="#" class="project-btn github"><i class="fab fa-github"></i><span>View Code</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card featured">
-                    <div class="featured-badge"><i class="fas fa-star"></i> Featured</div>
-                    <div class="project-bg-img landing-placeholder">
-                        <div class="project-status"><span class="status-badge live"><i class="fas fa-circle"></i> Live</span></div>
-                        <div class="project-bg-gradient">
-                            <div class="project-content">
-                                <div class="project-header"><h3 class="project-title">Prisimly Landing Page</h3><div class="project-number">02</div></div>
-                                <p class="project-description">A sleek, conversion-optimized landing page with smooth animations and modern layout principles.</p>
-                                <div class="project-extra hidden">
-                                    <div class="project-features">
-                                        <div class="feature"><i class="fas fa-check-circle"></i><span>Smooth Animations</span></div>
-                                        <div class="feature"><i class="fas fa-check-circle"></i><span>Conversion Focused</span></div>
-                                        <div class="feature"><i class="fas fa-check-circle"></i><span>Mobile Optimized</span></div>
-                                    </div>
-                                </div>
-                                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More <i class="fas fa-chevron-down"></i></button>
-                                <div class="project-links">
-                                    <a href="https://prismly.netlify.app" target="_blank" class="project-btn live-demo"><i class="fas fa-external-link-alt"></i><span>Live Demo</span></a>
-                                    <a href="#" class="project-btn github"><i class="fab fa-github"></i><span>View Code</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-bg-img portfolio-placeholder">
-                        <div class="project-status"><span class="status-badge live"><i class="fas fa-circle"></i> Live</span></div>
-                        <div class="project-bg-gradient">
-                            <div class="project-content">
-                                <div class="project-header"><h3 class="project-title">Creative Portfolio Website</h3><div class="project-number">03</div></div>
-                                <p class="project-description">An elegant portfolio featuring scroll-triggered animations, skill bars, and interactive contact form.</p>
-                                <div class="project-extra hidden">
-                                    <div class="project-features">
-                                        <div class="feature"><i class="fas fa-check-circle"></i><span>Scroll Animations</span></div>
-                                        <div class="feature"><i class="fas fa-check-circle"></i><span>Skill Progress Bars</span></div>
-                                        <div class="feature"><i class="fas fa-check-circle"></i><span>Contact Form</span></div>
-                                    </div>
-                                </div>
-                                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More <i class="fas fa-chevron-down"></i></button>
-                                <div class="project-links">
-                                    <a href="#" class="project-btn live-demo"><i class="fas fa-external-link-alt"></i><span>Live Demo</span></a>
-                                    <a href="#" class="project-btn github"><i class="fab fa-github"></i><span>View Code</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="view-all-section">
-                <p class="view-all-text">Want to see more of my work?</p>
-                <a href="projects.html" class="view-all-btn"><span>View All Projects</span><i class="fas fa-arrow-right"></i></a>
-            </div>
+        <!-- Step 4 -->
+        <div class="process-step" data-aos="fade-up" data-aos-delay="240">
+          <div class="process-icon-wrap">
+            <span class="process-step-number">4</span>
+            <i class="fa-solid fa-rotate"></i>
+          </div>
+          <h3 class="process-step-title">Review & Revise</h3>
+          <p class="process-step-desc">You review the live preview and give feedback. We refine until you're completely happy with it.</p>
         </div>
-    </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Kind Words</span>
-                <h2 class="section-title">What Clients <span class="highlight">Say</span></h2>
-                <p class="section-subtitle">Real feedback from real people I've worked with.</p>
-            </div>
-            <div class="testimonials-grid">
-
-                <div class="testimonial-card">
-                    <div class="testi-quote">"</div>
-                    <p class="testi-text">You did a good job — I absolutely love the landing page. It captured exactly what our brand needed. Clean, professional, and delivered on time.</p>
-                    <div class="testi-footer">
-                        <div class="testi-avatar">T</div>
-                        <div class="testi-info">
-                            <span class="testi-name">Twinstech</span>
-                            <span class="testi-role">Solar & Electrical Services</span>
-                        </div>
-                        <div class="testi-stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card featured-testi">
-                    <div class="testi-quote">"</div>
-                    <p class="testi-text">Wow — you've genuinely helped my business grow and took it to the next level. The store looks amazing and customers keep complimenting it.</p>
-                    <div class="testi-footer">
-                        <div class="testi-avatar">T</div>
-                        <div class="testi-info">
-                            <span class="testi-name">TruViewsFit</span>
-                            <span class="testi-role">Shoe Store Owner</span>
-                        </div>
-                        <div class="testi-stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testi-quote">"</div>
-                    <p class="testi-text">Working with Funmibi was effortless. He understood my vision immediately and turned it into a website that actually converts visitors into customers.</p>
-                    <div class="testi-footer">
-                        <div class="testi-avatar">A</div>
-                        <div class="testi-info">
-                            <span class="testi-name">Adeola M.</span>
-                            <span class="testi-role">E-Commerce Entrepreneur</span>
-                        </div>
-                        <div class="testi-stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <!-- Step 5 -->
+        <div class="process-step" data-aos="fade-up" data-aos-delay="320">
+          <div class="process-icon-wrap">
+            <span class="process-step-number">5</span>
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3 class="process-step-title">Launch & Handoff</h3>
+          <p class="process-step-desc">Your site goes live. You get the files, credentials, and a walkthrough so you're never left guessing.</p>
         </div>
-    </section>
 
-    <!-- Contact -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Let's Talk</span>
-                <h2 class="section-title">Got a Project <span class="highlight">in Mind?</span></h2>
-                <p class="section-subtitle">Skip the forms — let's just talk. Hit me up on WhatsApp and let's build something great together.</p>
-            </div>
-            <div class="contact-cta-wrapper">
-                <div class="contact-cta-card">
-                    <div class="cta-icon-wrap">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <div class="cta-text">
-                        <h3>Chat With Me Directly</h3>
-                        <p>I typically reply within a few hours. Tell me about your project and let's get started.</p>
-                    </div>
-                    <a href="https://wa.me/2349069785714?text=Hi%20Funmibi!%20I%20came%20across%20your%20portfolio%20and%20I%27d%20love%20to%20discuss%20a%20project%20with%20you." target="_blank" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Start a Conversation</span>
-                        <i class="fas fa-arrow-right btn-arrow"></i>
-                    </a>
-                </div>
-                <div class="contact-info-row">
-                    <div class="contact-info-item">
-                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <span class="info-label">Email</span>
-                            <a href="mailto:funmibitech04@gmail.com" class="info-value">funmibitech04@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <span class="info-label">Location</span>
-                            <span class="info-value">Lagos, Nigeria</span>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="info-icon"><i class="fas fa-circle status-dot-icon"></i></div>
-                        <div>
-                            <span class="info-label">Status</span>
-                            <span class="info-value available">Available for Projects</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-section">
-                    <h4 class="social-title">Find Me On</h4>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/abiodun-oluwafunmibi-b5264a37b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/Funmibicode?tab=overview&from=2026-04-01&to=2026-04-02" class="social-link github" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://x.com/patricktech04" class="social-link twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.link/ht4u49" class="social-link whatsapp" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
+      </div>
+
+      <div class="process-cta" data-aos="fade-up" data-aos-delay="200">
+        <p>Ready to start? Let's get your project moving.</p>
+        <a href="#contact" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane"></i> Start a Project
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOG — Hashnode GraphQL
+  ============================================================ -->
+  <section id="blog">
+    <div class="container">
+
+      <div class="blog-header">
+        <div data-aos="fade-up">
+          <p class="section-label">From the Blog</p>
+          <h2 class="section-title">Latest <span>Articles</span></h2>
+          <p class="section-desc">Tech tips, dev insights, and lessons from building on the web — fresh from my Hashnode blog.</p>
         </div>
-    </section>
+        <a href="https://funmibitech.hashnode.dev" target="_blank" rel="noopener"
+           class="btn btn-outline btn-sm" data-aos="fade-up" data-aos-delay="100">
+          Visit Blog <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <p>Designed & Built by <span class="highlight">Funmibi</span> · 2025</p>
-            <p class="footer-sub">Frontend Developer · Lagos, Nigeria</p>
+      <!-- Skeleton shown while loading -->
+      <div class="blog-skeleton-grid" id="blogSkeleton">
+        <div class="blog-skeleton-card">
+          <div class="skeleton-thumb"></div>
+          <div class="skeleton-body">
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line medium"></div>
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line short"></div>
+          </div>
         </div>
-    </footer>
+        <div class="blog-skeleton-card">
+          <div class="skeleton-thumb"></div>
+          <div class="skeleton-body">
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line medium"></div>
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line short"></div>
+          </div>
+        </div>
+        <div class="blog-skeleton-card">
+          <div class="skeleton-thumb"></div>
+          <div class="skeleton-body">
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line medium"></div>
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line short"></div>
+          </div>
+        </div>
+      </div>
 
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
-    <script src="main.js"></script>
-    <script>
-    function toggleReadMore(btn) {
-        const extra = btn.previousElementSibling;
-        const isHidden = extra.classList.contains('hidden');
-        extra.classList.toggle('hidden', !isHidden);
-        btn.innerHTML = isHidden
-            ? 'Show Less <i class="fas fa-chevron-up"></i>'
-            : 'Read More <i class="fas fa-chevron-down"></i>';
-    }
-    </script>
+      <!-- Posts injected here by JS -->
+      <div class="blog-grid" id="blogGrid" style="display:none;"></div>
+
+    </div>
+  </section>
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Info side -->
+        <div data-aos="fade-right">
+          <p class="section-label">Get In Touch</p>
+          <h2 class="section-title">Let's build something <span>great</span></h2>
+          <p class="contact-intro">
+            Have a project in mind? Want a website for your business, or just want to say hi?
+            Fill the form or reach out directly — I usually reply within a few hours.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="contact-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+              <a href="mailto:funmibitech04@gmail.com">funmibitech04@gmail.com</a>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon-wrap"><i class="fa-brands fa-whatsapp"></i></div>
+              <a href="https://wa.me/2349069785714" target="_blank" rel="noopener">+234 906 978 5714</a>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+              <span>Lagos, Nigeria — Available remotely</span>
+            </div>
+          </div>
+
+          <p class="contact-socials-label">Find me on</p>
+          <div class="contact-socials">
+            <a href="https://github.com/Funmibicode" target="_blank" rel="noopener" class="contact-social-link" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/abiodun-oluwafunmibi-b5264a37b" target="_blank" rel="noopener" class="contact-social-link" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://x.com/funmibitech04" target="_blank" rel="noopener" class="contact-social-link" aria-label="X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://wa.link/ht4u49" target="_blank" rel="noopener" class="contact-social-link" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/funmibitech" target="_blank" rel="noopener" class="contact-social-link" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@funmibitech" target="_blank" rel="noopener" class="contact-social-link" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form side -->
+        <div class="contact-form-wrap" data-aos="fade-left" data-aos-delay="100">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Your Name</label>
+              <input type="text" id="cf-name" placeholder="e.g. Tunde Adeyemi" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-service">What do you need?</label>
+            <select id="cf-service">
+              <option value="" disabled selected>Select a service</option>
+              <option value="Business Website">Business Website</option>
+              <option value="Landing Page">Landing Page</option>
+              <option value="E-Commerce Store">E-Commerce Store</option>
+              <option value="Portfolio Site">Portfolio Site</option>
+              <option value="Other">Other / Let's discuss</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-message">Your Message</label>
+            <textarea id="cf-message" placeholder="Tell me about your project, timeline, or just say hi!"></textarea>
+          </div>
+
+          <button class="form-submit btn btn-primary" id="formSubmitBtn" type="button">
+            <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> &nbsp;Send Message</span>
+            <span class="btn-spinner"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check" id="toastIcon"></i>
+    <span id="toastMsg">Message sent!</span>
+  </div>
+
+  <!-- Back to Top -->
+  <button id="backToTop" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-top">
+
+        <!-- Brand col -->
+        <div>
+          <a href="#hero" class="footer-brand-name">Funmibi<span>tech</span></a>
+          <p class="footer-brand-desc">
+            Building websites that help small businesses grow online.
+            Clean code, sharp design, and real results — from Lagos to the world.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://github.com/Funmibicode" target="_blank" rel="noopener" class="footer-social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abiodun-oluwafunmibi-b5264a37b" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/funmibitech04" target="_blank" rel="noopener" class="footer-social-link" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/funmibitech" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@funmibitech" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.link/ht4u49" target="_blank" rel="noopener" class="footer-social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div>
+          <p class="footer-col-title">Quick Links</p>
+          <div class="footer-links">
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#process">Process</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="https://funmibitechbrand.netlify.app" target="_blank" rel="noopener">Brand Site</a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <p class="footer-col-title">Services</p>
+          <div class="footer-links">
+            <a href="#contact">Business Websites</a>
+            <a href="#contact">Landing Pages</a>
+            <a href="#contact">E-Commerce Stores</a>
+            <a href="#contact">Portfolio Sites</a>
+            <a href="https://funmibitechbrand.netlify.app/#templates" target="_blank" rel="noopener">Website Templates</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 <a href="#hero">Funmibitech</a>. All rights reserved.</p>
+        <p>Designed &amp; built with <span class="footer-heart">♥</span> by <a href="#hero">Abiodun Oluwafunmibi</a> · Lagos, Nigeria</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script src="main.js"></script>
 </body>
 </html>
